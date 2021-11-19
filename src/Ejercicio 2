@@ -1,4 +1,7 @@
-function 02-holaparametros.sh {
->local -r primer arg=$1
->echo "hola" $*
-> }
+nano 02-hola-parametros.sh
+###############################################################
+#! /bin/bash
+echo "Hola $@!"
+#########################################################
+chmod +x 02-hola-parametros.sh
+./02-hola-parametros.sh
