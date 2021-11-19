@@ -1,1 +1,27 @@
+nano 04-hola-parametrosseparados.sh
+########################################################################3
+# si numero de parametros menos o igual que 0
+if [ $# -le 0 ]; then
+        echo "Hay que introducir al menos un parametro"
+        exit 1
+fi
+MENSAJE="Hola"
+PRIMERO=1
+
+# Iteramos sobre los parametros
+for i in "$@"; do
+        if [$PRIMERO -eq 1 ]; then
+                MENSAJE="$MENSAJE $1"
+                PRIMERO=0
+        else
+                MENSAJE="$MENSAJE, $1"
+        fi
+done
+
+# mostramos a salida por pantalla
+echo "$MENSAJE!"
+##########################################################################
+chmod +x 04-hola-parametrosseparados.sh 
+./04-hola-parametrosseparados.sh 
+
 
